@@ -1,8 +1,12 @@
 .rootDir{
     display: flex;
-    gap:50px;
-    width: 500px;
+    width: 400px;
+    justify-content: space-between;
     align-items: center;
+    background-color: thistle;
+    height: 50px;
+    border-radius: 3px;
+    margin-top: 3px;
 }
 
 .button{

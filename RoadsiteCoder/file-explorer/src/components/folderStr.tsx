@@ -16,6 +16,7 @@ const FolderStr = (props: FolderStrProps) => {
     const [isExpanded, setIsExpanded] = useState(false); // Track folder expansion state
     const [addFolder, setAddFolder] = useState(false); // Track folder expansion state
     const [addFile, setAddFile] = useState(false); // Track folder expansion state
+    const [name, setName] = useState(''); // Track folder expansion state
 
     const handleFolderClick = () => {
         if (data.isFolder) {
@@ -31,6 +32,24 @@ const FolderStr = (props: FolderStrProps) => {
         setAddFile(true)
     }
 
+    const updateName = (e:any) => {
+        console.log(e.target.value);
+        setName(e.target.value)
+    }
+
+    const handleAdd = () => {
+        let newValue : Folder = {
+            id : Math.floor(Math.random() * 100).toString(),
+            name : name,
+            isFolder : addFolder ? true : false,
+            items : []
+        }
+        data.items.push(newValue);
+        setAddFolder(false)
+        setAddFile(false)
+        setName('');
+        handleFolderClick()
+    }
 
     return (
         <>
@@ -46,13 +65,15 @@ const FolderStr = (props: FolderStrProps) => {
                     {addFolder && 
                         <div className='newFolder'>
                             <h1>📁</h1>
-                            <input />
+                            <input value={name} onChange={updateName}/>
+                            <button onClick={handleAdd}>add</button>
                         </div>
                     }
                     {addFile && 
                         <div className='newFile'>
                             <h1>📃</h1>
-                            <input />
+                            <input value={name} onChange={updateName}/>
+                            <button onClick={handleAdd}>add</button>
                         </div>
                     }
                     {isExpanded &&
