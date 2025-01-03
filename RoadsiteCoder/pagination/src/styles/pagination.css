@@ -1,0 +1,23 @@
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pagesWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 15px;
+    font-size: larger;
+    border: 2px solid black;
+    margin: 10px 20px;
+    cursor: pointer;
+}
+
+.pagesWrapper .page {
+    width: 100%;
+    border-right: 2px solid black;
+}
