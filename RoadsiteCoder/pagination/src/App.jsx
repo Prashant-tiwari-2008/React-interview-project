@@ -6,7 +6,6 @@ import Pagination from './components/pagination';
 
 function App() {
   const [data, setData] = useState();
-  const [productPerpage, setProductPerPage] = useState();
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
