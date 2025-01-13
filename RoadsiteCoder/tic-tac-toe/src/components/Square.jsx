@@ -1,14 +1,13 @@
-import React, { version } from 'react'
+import React, { useState, version } from 'react'
 
-const Square = () => {
-
+const Square = ({ value,onSquareClick }) => {
     function handleClick() {
-        console.log('clicked')
+        setValue('X')
     }
 
     return (
         <>
-            <button className='square' onClick={handleClick}>1</button>
+            <button className='square' style={{ height: "50px", width: "50px", textAlign: "center", alignItems: "center" }} onClick={onSquareClick}>{value}</button>
         </>
     )
 }
